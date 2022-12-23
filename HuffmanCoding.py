@@ -95,6 +95,7 @@ if __name__ == '__main__':
 
     coding_str = encoder(my_string, codes)
     with open("output_file.bin", "wb") as file:
+        coding_str_bin = struct.pack('!l', int(coding_str, 2))
         # file.write(coding_str.encode())
         file.write(bytes(coding_str, encoding='utf-8'))
     print("Сжатая строка: ", coding_str)
